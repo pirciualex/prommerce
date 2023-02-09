@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prommerce.API", "Prommerce.API\Prommerce.API.csproj", "{836063A0-6030-43F7-B3EF-B23A331BD5E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prommerce.Data", "Prommerce.Data\Prommerce.Data.csproj", "{778F117A-77EF-4176-82B6-F7955F0D2E3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prommerce.Application", "Prommerce.Application\Prommerce.Application.csproj", "{8E895D72-5A43-4BFA-BFC9-65E7CAD95EF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{ADED0574-A109-47FC-B704-8DBD0E927750}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{DBE54CA4-DCC8-419F-96BA-2920BF909FC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{50AB3D4C-7793-4763-A1A4-178232464567}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{B939BA16-433B-4B83-8DBB-BFCB4363780B}"
+	ProjectSection(SolutionItems) = preProject
+		..\tools\open-windows-terminal.cmd = ..\tools\open-windows-terminal.cmd
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prommerce.Common", "Prommerce.Common\Prommerce.Common.csproj", "{87443FD7-1F4F-44E3-BE50-B9B00B8D4396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{836063A0-6030-43F7-B3EF-B23A331BD5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{836063A0-6030-43F7-B3EF-B23A331BD5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{836063A0-6030-43F7-B3EF-B23A331BD5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{836063A0-6030-43F7-B3EF-B23A331BD5E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{778F117A-77EF-4176-82B6-F7955F0D2E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778F117A-77EF-4176-82B6-F7955F0D2E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778F117A-77EF-4176-82B6-F7955F0D2E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778F117A-77EF-4176-82B6-F7955F0D2E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E895D72-5A43-4BFA-BFC9-65E7CAD95EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E895D72-5A43-4BFA-BFC9-65E7CAD95EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E895D72-5A43-4BFA-BFC9-65E7CAD95EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E895D72-5A43-4BFA-BFC9-65E7CAD95EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87443FD7-1F4F-44E3-BE50-B9B00B8D4396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87443FD7-1F4F-44E3-BE50-B9B00B8D4396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87443FD7-1F4F-44E3-BE50-B9B00B8D4396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87443FD7-1F4F-44E3-BE50-B9B00B8D4396}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{836063A0-6030-43F7-B3EF-B23A331BD5E7} = {ADED0574-A109-47FC-B704-8DBD0E927750}
+		{778F117A-77EF-4176-82B6-F7955F0D2E3E} = {DBE54CA4-DCC8-419F-96BA-2920BF909FC5}
+		{8E895D72-5A43-4BFA-BFC9-65E7CAD95EF6} = {50AB3D4C-7793-4763-A1A4-178232464567}
+		{87443FD7-1F4F-44E3-BE50-B9B00B8D4396} = {50AB3D4C-7793-4763-A1A4-178232464567}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9989B553-1D40-4C95-9687-53280B510611}
+	EndGlobalSection
+EndGlobal
