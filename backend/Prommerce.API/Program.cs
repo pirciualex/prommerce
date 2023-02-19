@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Prommerce.API.Initializer;
 using Prommerce.Application;
+using Prommerce.Application.RouteHandlers;
 using Prommerce.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,10 @@ builder.Services.AddAuthorization(options =>
     .RequireAuthenticatedUser()
     .Build();
 });
+
+//builder.Services.AddAuthorizationBuilder()
+//    .AddPolicy("admin", policy =>
+//    policy.RequireRole("admin").RequireClaim("permission", "admin"));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -42,6 +47,15 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+//builder.Services.AddSwaggerGen(options =>
+//{
+//    options.OperationFilter<XmlOperationFilter>();
+//});
+//builder.Services.Configure<SwaggerGeneratorOptions>(options =>
+//{
+//    options.InferSecuritySchemes = true;
+//});
+
 builder.Services.AddData();
 builder.Services.AddApplication();
 builder.Services.AddScoped<IInitializer, DbInitializer>();
@@ -51,7 +65,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.RoutePrefix = "";
+    });
 }
 
 app.UseAuthentication();
@@ -78,6 +95,17 @@ using (var scope = app.Services.CreateScope())
         app.Logger.LogError(e, "Initializer failed");
         throw;
     }
+}
+
+static EndpointFilterDelegate RequestAuditor(EndpointFilterFactoryContext handlerContext, EndpointFilterDelegate next)
+{
+    var loggerFactory = handlerContext.ApplicationServices.GetService<ILoggerFactory>();
+    var logger = loggerFactory.CreateLogger("RequestAuditor");
+    return (invocationContext) =>
+    {
+        logger.LogInformation($"Received a request for: {invocationContext.HttpContext.Request.Path}");
+        return next(invocationContext);
+    };
 }
 
 app.Run();
